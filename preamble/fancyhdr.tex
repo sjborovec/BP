@@ -1,0 +1,26 @@
+\usepackage{fancyhdr}
+    
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+
+\let\origdoublepage\cleardoublepage
+\newcommand{\clearemptydoublepage}{\clearpage{\pagestyle{empty}\origdoublepage}}
+\let\cleardoublepage\clearemptydoublepage
+
+\setlength{\headheight}{13.59999pt}
+
+\fancypagestyle{companion}{
+    \fancyhf{}
+    \fancyhead[CE]{\textit{Dekarbonizace v rafinérském průmyslu}}
+    \fancyhead[CO]{\textit{\leftmark}}
+    \fancyhead[LE,RO]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead{}
+    \fancyfoot[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}

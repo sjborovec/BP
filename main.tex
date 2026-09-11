@@ -1,0 +1,50 @@
+\documentclass[a4paper,twoside,11pt]{book}
+
+\input{preamble/preamble}
+
+\begin{document}
+
+\input{preamble/titlepage}
+
+\pagestyle{companion}
+
+\frontmatter
+\includepdf{other/zadani.pdf}
+\input{other/anotacnilist}
+\input{other/prohlaseni}
+\input{other/podekovani}
+\tableofcontents
+
+\mainmatter
+\input{chapters/uvod}
+\input{chapters/vodik}
+\input{chapters/vyuziti}
+\input{chapters/vyroba}
+\input{chapters/projekty}
+\input{chapters/prakticka}
+\input{chapters/zaver}
+
+\backmatter\itchap
+% Bibliografie
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\bibname}
+\printbibliography
+\markboth{\bibname}{\bibname}
+% Seznam obrázků
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\markboth{\listfigurename}{\listfigurename}
+% Seznam tabulek
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+\markboth{\listtablename}{\listtablename}
+% Seznam symbolů a zkratek
+\cleardoublepage
+\addcontentsline{toc}{chapter}{\nomname}
+\printnomenclature
+\input{other/symbolyzkratky}
+\markboth{\nomname}{\nomname}
+
+\end{document}

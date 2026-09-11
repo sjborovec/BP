@@ -1,0 +1,48 @@
+\definecolor{coalccs}{RGB}{178, 135, 240}
+\definecolor{windoffshore}{RGB}{104, 244, 148}
+\definecolor{windonshore}{RGB}{1, 173, 161}
+\definecolor{solar}{RGB}{254, 211, 36}
+\definecolor{jadro}{RGB}{227, 73, 71}
+
+\begin{tikzpicture}
+    \begin{axis}[
+        ybar stacked,
+        ymajorgrids,
+        grid style={dashed,gray!30},
+        width = 0.8\textwidth,
+        height= 0.5\textwidth,
+        bar width = 15pt,
+        ymin = 0,
+        ymax = 14,
+        ylabel={Cena vodíku $[\mathrm{USD/kg_{H_2}}]$},
+        legend entries={Zemní plyn bez CCUS,Zemní plyn s CCUS,Uhlí bez CCUS,Uhlí s CCUS,Elektřina z větrné elektrárny na moři,Elektřina z větrných elektráren na pevnině,Elektřina z fotovoltaiky,Elektřina z jaderných elektráren},
+        legend style={at={(0.5,-0.1)},anchor=north},
+        symbolic x coords={1,2,3,4,5,6,7,8},
+        xtick=data,
+        ytick={0,2,4,6,8,10,12,14},
+        x tick label style={text=white}
+        ]
+    \addplot[transparent,fill=transparent,forget plot] coordinates {(1,1.2) (2,1.75) (3,1.9) (4,2.3) (5,3.55) (6,4.75) (7,3.7) (8,3.5)}; %odsazení sloupců
+    
+    \addplot[lightgray!50!black,fill=lightgray] coordinates {(1,4.6) (2,0) (3,0) (4,0) (5,0) (6,0) (7,0) (8,0)};
+    \addplot[lightgray!50!black,pattern=north east lines,pattern color=gray,forget plot] coordinates {(1,0.5) (2,0) (3,0) (4,0) (5,0) (6,0) (7,0) (8,0)};
+    
+    \addplot[blue!50!black,fill=blue] coordinates {(1,0) (2,5.55) (3,0) (4,0) (5,0) (6,0) (7,0) (8,0)};
+    \addplot[blue!50!black,pattern=north east lines,pattern color=blue,forget plot] coordinates {(1,0) (2,0.05) (3,0) (4,0) (5,0) (6,0) (7,0) (8,0)};
+
+    \addplot[darkgray!50!black,fill=darkgray] coordinates {(1,0) (2,0) (3,2) (4,0) (5,0) (6,0) (7,0) (8,0)};
+    \addplot[darkgray!50!black,pattern=north east lines,pattern color=darkgray,forget plot] coordinates {(1,0) (2,0) (3,1.1) (4,0) (5,0) (6,0) (7,0) (8,0)};
+
+    \addplot[coalccs!50!black,fill=coalccs] coordinates {(1,0) (2,0) (3,0) (4,2.6) (5,0) (6,0) (7,0) (8,0)};
+    \addplot[coalccs!50!black,pattern=north east lines,pattern color=coalccs,forget plot] coordinates {(1,0) (2,0) (3,0) (4,0.05) (5,0) (6,0) (7,0) (8,0)};
+
+    \addplot[windoffshore!50!black,fill=windoffshore] coordinates {(1,0) (2,0) (3,0) (4,0) (5,8.5) (6,0) (7,0) (8,0)};
+
+    \addplot[windonshore!50!black,fill=windonshore] coordinates {(1,0) (2,0) (3,0) (4,0) (5,0) (6,7.3) (7,0) (8,0)};
+
+    \addplot[solar!50!black,fill=solar] coordinates {(1,0) (2,0) (3,0) (4,0) (5,0) (6,0) (7,7.6) (8,0)};
+
+    \addplot[jadro!50!black,fill=jadro] coordinates {(1,0) (2,0) (3,0) (4,0) (5,0) (6,0) (7,0) (8,3.6)};
+
+    \end{axis}
+\end{tikzpicture}

@@ -1,0 +1,33 @@
+\usepackage{pifont}
+\usepackage{lmodern}
+\usepackage{ragged2e}
+
+\usepackage[clearempty,explicit,noindentafter]{titlesec}
+
+% Chapter
+\titlespacing{\chapter}{0pt}{0pt}{5\baselineskip}[0pt]
+    
+\titleformat{\chapter}[hang]
+    {\LARGE\usefont{OT1}{cmr}{b}{n}\color{black}}
+    {Kapitola \thechapter}
+    {10pt}
+    {\vskip6pt\titlerule[.5pt]\vskip6pt#1}
+
+\titleformat{name=\chapter,numberless}[block]
+    {\LARGE\usefont{OT1}{cmr}{b}{n}\color{black}}
+    {}
+    {0pt}
+    {\titlerule[.5pt]\vskip6pt\usefont{OT1}{cmr}{b}{n}\LARGE\selectfont{#1}}
+
+% Paragraph
+\titleformat{\paragraph}[hang]
+    {\normalsize\bfseries\color{black}}
+    {\theparagraph}
+    {0pt}
+    {#1}
+
+\usepackage{titletoc}
+
+% Chapter
+\newcommand{\itchap}{
+\titlecontents{chapter}[0pt]{\vskip12pt}{\bfseries\thechapter\hspace*{10.1pt}}{\itshape}{\hfill\contentspage}[\vskip-5pt]}

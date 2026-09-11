@@ -1,0 +1,163 @@
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx} %vkládání obrázků
+\usepackage{amssymb} % symbols
+\usepackage[nointegrals]{wasysym} % symbols
+
+% Chemický package
+\usepackage[version=4]{mhchem}
+\newcommand\reaction[1]{\begin{equation}\ce{#1}\end{equation}}
+\newcommand\reactionnonumber[1]{\begin{equation*}\ce{#1}\end{equation*}}
+
+\usepackage[english, main=czech]{babel}
+
+\usepackage{blindtext}
+\usepackage{csquotes}
+
+\usepackage[inner=3.5cm, % dle normy 3.5cm
+outer=3.5cm, 
+top=3cm,
+bottom=3cm]{geometry} 
+
+\usepackage[T1]{fontenc}
+
+\usepackage[nopatch=item]{microtype}
+\usepackage{textcomp}
+
+\graphicspath{ {figures/} }
+
+\usepackage{array}
+\usepackage{makecell}
+\renewcommand\theadalign{cc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+
+\usepackage{float}
+\usepackage{xcolor,colortbl}
+
+% Seznam symbolů & zkratek
+\usepackage{nomencl}
+\makenomenclature
+\renewcommand{\nomname}{Seznam symbolů a zkratek}
+\usepackage{etoolbox}
+\newlength{\nomitemorigsep}
+\setlength{\nomitemorigsep}{\nomitemsep}
+\setlength{\nomitemsep}{-\parsep}
+\setlength{\nomlabelwidth}{1.35cm}
+\renewcommand\nomgroup[1]{%
+\itemsep\nomitemorigsep
+  \item[\bfseries
+  \ifstrequal{#1}{C}{Chemické vzorce}{%
+  \ifstrequal{#1}{V}{Fyzikální veličiny a jejich jednotky}{}}%
+]\itemsep\nomitemsep}
+
+\usepackage[nohyperlinks]{acronym}
+\renewcommand*{\aclabelfont}[1]{\textbf{\acsfont{#1}}}
+
+% Poznámky pod čarou
+\usepackage{footnotehyper}
+\usepackage[multiple]{footmisc}
+\counterwithout{footnote}{chapter}
+
+\input{preamble/titlesectoc}
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\usepackage{enumitem}
+\usepackage{calc}
+
+% Tikz
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{
+	angles,
+	quotes,
+	3d,
+	perspective,
+	shapes,
+	intersections,
+	babel,
+	arrows.meta,
+	positioning,
+	decorations,
+	calligraphy,
+	decorations.markings,
+	decorations.text,
+	decorations.pathmorphing,
+	decorations.pathreplacing,
+	calc,
+	hobby,
+	bending,
+        patterns,
+        tikzmark,
+        calc,
+        hobby,
+	shadings,
+	shapes.geometric,
+	patterns.meta
+}
+\tikzset{pics/angle/.append style={/tikz/transform shape,/tikz/pic text options={transform shape=false}}}
+\tikzset{>=stealth}
+
+\usepackage[labelfont = {bf},labelsep = colon]{caption}
+\usepackage{subcaption}
+\usepackage{capt-of}
+\usepackage{booktabs}
+
+\usepackage{textcase}
+
+\usepackage{pdfpages}
+
+\usepackage{lipsum}
+
+\input{preamble/fancyhdr}
+
+\usepackage{multicol}
+\usepackage{multirow} %sloučení buněk v tabulkách
+
+\usepackage{xurl}
+
+\usepackage[figure,table]{totalcount}
+
+\usepackage{totpages}
+
+\usepackage{nicematrix}
+
+\usepackage{siunitx}
+
+%BibLaTeX
+
+%@preamble{"\newcommand{\noopsort}[1]{} "
+%        # "\newcommand{\printfirst}[2]{#1} "
+%        # "\newcommand{\singleletter}[1]{#1} "
+%        # "\newcommand{\switchargs}[2]{#2#1} "
+%}
+\usepackage[backend=biber,style=iso-numeric]{biblatex}
+    \DefineBibliographyStrings{czech}{%
+	urlfrom = {dostupné z},
+    }
+    \DefineBibliographyExtras{czech}{%
+        \renewcommand*{\finalnamedelim}{\space{a}\space} % "a" mezi předposledním a posledním autorem
+    }
+    \DeclareFieldFormat{url}{\bibstring{urlfrom}\addcolon\space\url{#1}}
+    \addbibresource{references.bib}
+
+\newcommand{\krat}{\!\cdot\!} %upravený spacing
+
+\usepackage{orcidlink}
+
+\usepackage{hyperref}
+\hypersetup{pdftitle=F2-BP-2024-Borovec-Stepan, 
+	pdfauthor=Štěpán Borovec,
+	pdffitwindow,
+	pdfpagemode=UseOutlines,
+	pdfpagelayout=TwoPageRight,
+	breaklinks,
+	linktoc=all,
+	hidelinks,
+	hypertexnames=false,
+	bookmarksopen=false
+}
