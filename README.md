@@ -53,9 +53,7 @@ pdflatex main.tex
 pdflatex main.tex
 ```
 
-Případně `latexmk -pdf main.tex`. Kromě běžné TeX Live / MacTeX instalace jsou potřeba mimo jiné balíčky `biblatex-iso690`, `mhchem`, `pgfplots`, `tikz` a `pdfpages`.
-
-Soubor `other/zadani.pdf` (oficiální zadání práce) není součástí tohoto repositáře; bez něj `\includepdf` v `main.tex` při sazbě selže.
+Případně `latexmk -pdf main.tex`. Kromě běžné TeX Live / MacTeX instalace jsou potřeba mimo jiné balíčky `biblatex-iso690`, `mhchem`, `pgfplots`, `tikz` a `pdfpages`. Oficiální zadání je v `other/zadani.pdf`.
 
 ## Licence
 
